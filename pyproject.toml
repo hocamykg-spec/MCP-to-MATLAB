@@ -1,0 +1,15 @@
+[project]
+name = "mcp-matlab"
+version = "0.1.0"
+description = "MCP server connecting Claude Code to MATLAB via Engine API"
+requires-python = ">=3.9"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "numpy>=1.21",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-mock>=3.12.0",
+]
