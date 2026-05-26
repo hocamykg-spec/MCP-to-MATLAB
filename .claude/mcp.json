@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "matlab": {
+      "command": "D:/Python3.14.3/python.exe",
+      "args": ["server.py"],
+      "cwd": "C:/Users/vanke/Desktop/mcp-matlab"
+    }
+  }
+}
