@@ -1,7 +1,15 @@
+import os
+import sys
+
 try:
+    _MATLAB_ROOT = os.environ.get("MATLAB_ROOT", r"D:\MATLAB")
+    os.add_dll_directory(os.path.join(_MATLAB_ROOT, "bin", "win64"))
+    os.add_dll_directory(os.path.join(_MATLAB_ROOT, "extern", "bin", "win64"))
+    sys.path.insert(0, os.path.join(_MATLAB_ROOT, "extern", "engines", "python", "dist", "matlab", "engine", "win64"))
+    sys.path.insert(0, os.path.join(_MATLAB_ROOT, "extern", "bin", "win64"))
     import matlab.engine
-except ImportError:
-    matlab = None  # Placeholder for environments without MATLAB Engine; mocked in tests
+except (ImportError, OSError, FileNotFoundError):
+    matlab = None
 
 
 class MatlabSession:
